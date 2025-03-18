@@ -107,7 +107,7 @@ while functionality.game_start:
         ):
             ball.setx(player_a.xcor() + 10)  # Prevent ball from getting stuck
             ball.dx *= -1
-            ball.dx += random.choice([-0.015, 0.015])
+            ball.dx += random.choice([-0.01, 0.01])
             winsound.PlaySound("paddle-hit.wav", winsound.SND_ASYNC)
 
     if (ball.xcor() <= player_b.xcor() + 10) and (ball.xcor() >= player_b.xcor() - 10):
@@ -116,5 +116,5 @@ while functionality.game_start:
         ):
             ball.setx(player_b.xcor() - 10)  # Prevent ball from getting stuck
             ball.dx *= -1
-            ball.dx += random.choice([-0.015, 0.015])
+            ball.dx += random.choice([-0.01, 0.01])
             winsound.PlaySound("paddle-hit.wav", winsound.SND_ASYNC)

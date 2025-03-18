@@ -105,12 +105,12 @@ while functionality.game_start:
         if (ball.ycor() <= player_a.ycor() + 60) and (ball.ycor() >= player_a.ycor() - 60):
             ball.setx(player_a.xcor() + 10)  # Prevent ball from getting stuck
             ball.dx *= -1
-            ball.dx += random.choice([-0.015, 0.015])
+            ball.dx += random.choice([-0.01, 0.01])
             os.system("aplay paddle-hit.wav&")
 
     if (ball.xcor() <= player_b.xcor() + 10) and (ball.xcor() >= player_b.xcor() - 10):
         if (ball.ycor() <= player_b.ycor() + 60) and (ball.ycor() >= player_b.ycor() - 60):
             ball.setx(player_b.xcor() - 10)  # Prevent ball from getting stuck
             ball.dx *= -1
-            ball.dx += random.choice([-0.015, 0.015])
+            ball.dx += random.choice([-0.01, 0.01])
             os.system("aplay paddle-hit.wav&")
