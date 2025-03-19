@@ -6,6 +6,7 @@ import os
 import actors
 import functionality
 import random
+import time
 
 
 wn = actors.wn
@@ -53,8 +54,21 @@ actors.startGame()
 #os.system("aplay power-up.mp3&")
 # game loop
 
+last_time = time.time()
+frame_count = 0
+
 while functionality.game_start:
     wn.update()
+    frame_count += 1
+    current_time = time.time()
+    elapsed_time = current_time - last_time
+
+    if elapsed_time >= 1.0:
+        fps = frame_count / elapsed_time
+        actors.fps_display.clear()
+        actors.fps_display.write(f"FPS: {fps:.2f}", align="left", font=("Courier", 16, "normal"))
+        frame_count = 0
+        last_time = current_time
 
     # Handle paddle movement based on key states
     if key_states["w"]:

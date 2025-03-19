@@ -16,6 +16,7 @@ a_score = 0
 b_score = 0
 score = turtle.Turtle()
 border = turtle.Turtle()
+fps_display = turtle.Turtle()
 
 
 def welcomeScreen():
@@ -97,3 +98,10 @@ def startGame():
     border.goto(-400, 260)
     border.pendown()
     border.setx(400)
+
+    # FPS display
+    fps_display.speed(0)
+    fps_display.penup()
+    fps_display.color("white")
+    fps_display.hideturtle()
+    fps_display.goto(-395, -320)
